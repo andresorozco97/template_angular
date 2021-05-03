@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', loadChildren: () => import('./pages/home/home.module').then((m) => m.HomeModule) },
+  { path: 'build', loadChildren: () => import('./pages/build/build.module').then((m) => m.BuildModule) },
+  { path: '**', loadChildren: () => import('./pages/error/error.module').then((m) => m.ErrorModule) },
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
