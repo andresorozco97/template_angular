@@ -1,0 +1,27 @@
+@import '../../../../styles.scss';
+
+.c-btn{
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.8rem;
+    margin: 0.5rem;
+    font-size: $text-size-paragrah;
+
+    &-primary{
+        color: $color-primary;
+        background-color: $color-secondary;
+
+        &:hover{
+            color: $color-secondary;
+            background-color: $color-primary;
+        }
+    }
+    &-secondary{
+        color: $color-secondary;
+        background-color: $color-primary;
+
+        &:hover{
+            color: $color-primary;
+            background-color: $color-secondary;
+        }
+    }
+}

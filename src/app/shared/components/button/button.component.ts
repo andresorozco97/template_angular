@@ -10,6 +10,7 @@ export class ButtonComponent implements OnInit {
 
   @Input() text: string = '';
   @Input() link: string = '';
+  @Input() class: string = '';
 
   constructor(private router: Router) { }
 
